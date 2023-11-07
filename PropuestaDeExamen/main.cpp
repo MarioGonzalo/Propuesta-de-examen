@@ -12,9 +12,14 @@ int main() {
         for (int j = 0; j < 20; ++j) {
             b++;
             std::string pot = std::to_string(sqrt(pow(a,2) + pow(b,2)));
-            if (pot.find(".") == false ) {
+            if (pot.find(".00000") == true ) {
                 c = sqrt(pow(a, 2) + pow(b, 2));
-                std::cout << a << "\n" << b << "\n" << c << std::endl;
+                if((a+b)>c && (b+c) >a && (a+c) > b){
+                    std::cout << a << "\n" << b << "\n" << c << std::endl;
+                    continue;
+                } else {
+                    std::cout << "Falso positivo" << std::endl;
+                }
             } else {
                 continue;
             }
