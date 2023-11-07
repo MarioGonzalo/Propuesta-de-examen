@@ -6,14 +6,16 @@ int main() {
     int b = 0;
     int c;
     bool triplePitagorico = false;
-    while(!triplePitagorico){
+    for (int i = 0; i < 20; ++i) {
         a++;
-        while(!triplePitagorico){
+        for (int j = 0; j < 1; ++j) {
             b++;
-            if (sqrt(pow(a,2) + pow(b,2))) {
+            std::string pot = std::to_string(sqrt(pow(a,2) + pow(b,2)));
+            if (pot.find(".") == false ) {
                 c = sqrt(pow(a, 2) + pow(b, 2));
-                std::cout << c << std::endl;
-                triplePitagorico = true;
+                std::cout << a << "\n" << b << "\n" << c << std::endl;
+            } else {
+                continue;
             }
         }
     }
